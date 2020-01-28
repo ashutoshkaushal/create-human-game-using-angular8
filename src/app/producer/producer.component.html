@@ -1,0 +1,20 @@
+<div *ngIf=dataStatus>
+<mat-toolbar color="primary"  style="font-size:28px;font-family:Georgia, 'Times New Roman', Times, serif">
+  Description of the Created Human</mat-toolbar>
+  <div style="padding:10px;">
+    <p>The human will be named {{post[0].name}}</p>
+    <br/>
+    <p>Their gender will be {{post[0].gender}}</p>
+    <br/>
+    <p>The maximum length of their hair will be {{post[0].hair}}</p><br/>
+    <p>Their Qualities are </p>
+    <ol *ngFor="let a of post[0].qualities">
+      <ul *ngFor="let i of a">
+        <li>{{i}}</li>
+        </ul>
+    </ol>
+    <br/>
+    <p>About the human: <br/><br/>{{post[0].des}}</p><br/>
+    <p>Their height will be {{post[0].height}}</p>
+  </div>
+</div>

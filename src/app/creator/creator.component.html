@@ -1,0 +1,46 @@
+<div *ngIf="loginStatus">
+<mat-toolbar color="primary"  style="font-size:28px;font-family:Georgia, 'Times New Roman', Times, serif">
+  Enter the Details </mat-toolbar>
+<main style="width:40%;margin:auto">
+<div >
+  <br/>
+  <mat-card>
+  <form  (submit)=addData(postForm) #postForm=ngForm>
+    <mat-form-field>
+    <input matInput type="text" placeholder="Enter the name..." [(ngModel)]="username" name="user" ngModel #user="ngModel"
+    required>
+    <mat-error *ngIf="user.invalid">Please enter username...</mat-error>
+  </mat-form-field><br/><br/>
+  <mat-radio-group ngModel name="gender" #gender="ngModel" required>
+    <mat-radio-button value="male">Male</mat-radio-button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <mat-radio-button value="female">Female</mat-radio-button><br/><br/>
+    <mat-error *ngIf="gender.invalid">Please select a Gender</mat-error>
+  </mat-radio-group><br/>
+  <p >Decide Hair-length(in Per)</p>
+  <mat-slider thumbLabel  min="0" max="100" step="1" value="0" ngModel #hair="ngModel"
+  name="hair" required></mat-slider><br/>
+  <mat-error *ngIf="hair.invalid">Please select Hair-Length..</mat-error><br/>
+  <p>Select Qualities of Human</p><br/>
+  <mat-checkbox  name="quality" [(ngModel)]="a" value="honest">Honest</mat-checkbox>&nbsp;&nbsp;
+  <mat-checkbox name="quality" [(ngModel)]="b" value="humble">Humble</mat-checkbox>&nbsp;&nbsp;
+  <mat-checkbox name="quality" [(ngModel)]="c" value="kind">Kind</mat-checkbox><br/><br/>
+  <mat-form-field><br/>
+    <textarea matInput rows="8"
+    placeholder="Enter the description of Human..." required name="des" #des="ngModel" ngModel></textarea>
+    <mat-error *ngIf="des.invalid">Please enter description</mat-error>
+  </mat-form-field><br/><br/>
+  <mat-form-field>
+    <mat-label style="color:black">Select Height</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option>None</mat-option>
+      <mat-option value="6.7">6.7</mat-option>
+      <mat-option value="5.2">5.2</mat-option>
+      <mat-option value="5.5">5.5</mat-option>
+    </mat-select>
+  </mat-form-field><br/><br/>
+  <button mat-raised-button type="submit" color="accent">Create Human</button>
+  </form>
+</mat-card>
+</div>
+</main>
+</div>

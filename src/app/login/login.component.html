@@ -1,0 +1,21 @@
+<form (submit)="check(postForm)" #postForm="ngForm">
+  <main style="width:40%;margin:auto">
+  <mat-card>
+    <mat-form-field>
+      <input required type="text" matInput placeholder="Enter Username" ngModel name="user" #user="ngModel">
+      <mat-error *ngIf="user.invalid">Please enter UserName</mat-error>
+    </mat-form-field><br/><br/>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Enter Password" ngModel name="pass" #pass="ngModel" required>
+      <mat-error *ngIf="pass.invalid">Please enter Valid Password</mat-error>
+    </mat-form-field><br/><br/>
+    <button mat-raised-button color="primary" type="submit">Login</button>
+  </mat-card>
+  <br/>
+  <div class="row">
+    <div class="col-xs-12">
+      <p style="color:red;">{{msg}}</p>
+    </div>
+  </div>
+  </main>
+  </form>

@@ -1,0 +1,5 @@
+<app-header></app-header>
+<br/>
+<app-login (status)="checkStatus($event)"></app-login>
+<app-creator [loginStatus]="status" (f)="checkF($event)"></app-creator>
+<app-producer [dataStatus]="status1"></app-producer>
